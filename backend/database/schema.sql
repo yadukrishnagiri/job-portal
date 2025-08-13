@@ -79,3 +79,4 @@ CREATE TABLE IF NOT EXISTS job_alerts (
     is_active BOOLEAN DEFAULT 1,
     FOREIGN KEY (student_id) REFERENCES users (id) ON DELETE CASCADE
 );
+
