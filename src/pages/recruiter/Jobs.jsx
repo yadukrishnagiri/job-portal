@@ -23,10 +23,12 @@ const RecruiterJobs = () => {
   useEffect(() => { fetchJobs(); }, []);
 
   const deleteJob = async (jobId) => {
-    if (!confirm('Delete this job?')) return;
+    if (!window.confirm('Are you sure you want to delete this job? This action cannot be undone.')) return;
+    setError('');
     try {
       await apiClient.delete(`/recruiter/jobs/${jobId}`);
-      fetchJobs();
+      setJobs(jobs.filter(job => job.id !== jobId)); // Update state immediately
+      fetchJobs(); // Refresh from server
     } catch (err) {
       setError(err.message || 'Failed to delete job');
     }

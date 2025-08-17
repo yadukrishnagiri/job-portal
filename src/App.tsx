@@ -12,6 +12,7 @@ import StudentProfile from './pages/student/Profile.jsx';
 import StudentJobs from './pages/student/Jobs.jsx';
 import StudentApplications from './pages/student/Applications.jsx';
 import StudentJobDetails from './pages/student/JobDetails.jsx';
+import RecruiterDashboard from './pages/recruiter/Dashboard.jsx';
 import RecruiterJobs from './pages/recruiter/Jobs.jsx';
 import RecruiterPostJob from './pages/recruiter/PostJob.jsx';
 import RecruiterProfile from './pages/recruiter/Profile.jsx';
@@ -101,10 +102,7 @@ function App() {
           element={
             <ProtectedRoute allowedRoles={['recruiter']}>
               <Layout>
-                <div className="text-center py-20">
-                  <h1 className="text-4xl font-bold text-gray-900 mb-4">Recruiter Dashboard</h1>
-                  <p className="text-xl text-gray-600">Welcome to your recruiter dashboard!</p>
-                </div>
+                <RecruiterDashboard />
               </Layout>
             </ProtectedRoute>
           } 
