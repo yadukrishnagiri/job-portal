@@ -238,4 +238,10 @@ If you encounter any issues or have questions:
 
 ---
 
-**Built with ❤️ for connecting students with their dream careers**
+** submited by : 
+Prathmesh Pramod Goje
+Pratham Bhatnagar
+Yadukrishnagiri
+Krishna Chadha
+Raj Aarya**
+
