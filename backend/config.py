@@ -17,5 +17,10 @@ class Config:
     JWT_ACCESS_TOKEN_EXPIRES = timedelta(days=7)
     
     # CORS configuration
-    CORS_ORIGINS = ['http://localhost:3000', 'http://localhost:5173']
+    CORS_ORIGINS = [
+        'http://localhost:3000', 
+        'http://localhost:5173',
+        'https://job-portal-blush-pi.vercel.app',
+        'https://*.vercel.app'
+    ]
 

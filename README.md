@@ -1,210 +1,293 @@
-# 🚀 Student Job Portal
+# Submitted by:
+- ## Prathmesh Pramod Goje - 52339100
+- ## Pratham Bhatnagar - 52337157
+- ## Yadukrishnagiri - 52339054
+- ## Krishna Chadha - 52339050
+- ## Raj Aryan - 52336727
 
-A comprehensive full-stack web application that connects students with recruiters and companies for job opportunities. Built with modern technologies to provide a seamless job search and recruitment experience.
+# 🚀 Modern Student Job Portal
+
+A comprehensive full-stack web application that connects students with recruiters and companies for job opportunities. Built with modern technologies and production-ready deployment configurations to provide a seamless job search and recruitment experience.
+
+## 🌐 Live Demo
+- **Frontend**: [https://job-portal-blush-pi.vercel.app/](https://job-portal-blush-pi.vercel.app/)
+- **Backend**: Deploy using the configurations provided below
 
 ## ✨ Features
 
 ### 🎓 For Students
-- **Profile Management**: Create and manage detailed profiles with education, skills, and experience
-- **CV Upload**: Secure file upload system for resumes and cover letters
-- **Job Search**: Browse and search for relevant job opportunities
-- **Smart Matching**: Set preferences for job type, location, and salary expectations
-- **Application Tracking**: Monitor application status (pending, shortlisted, rejected, hired)
-- **Job Alerts**: Get notified about new positions matching your criteria
+- **Complete Profile Management**: Create detailed profiles with education, skills, location, and salary expectations
+- **CV Upload System**: Secure file upload for PDF, DOC, and DOCX resumes
+- **Advanced Job Search**: Browse and filter jobs by location, type, work mode, salary, and skills
+- **Job Application System**: Apply to jobs with custom cover letters
+- **Application Tracking**: Real-time status monitoring (pending, shortlisted, rejected, hired)
+- **Responsive Dashboard**: Modern UI with statistics and recent activity
 
 ### 🏢 For Recruiters
-- **Job Posting**: Create detailed job listings with requirements and specifications
-- **Candidate Management**: Browse student profiles and review applications
-- **Hiring Pipeline**: Manage the entire hiring process from posting to hiring
-- **Company Profile**: Maintain company information and branding
+- **Professional Dashboard**: Comprehensive overview with job statistics and quick actions
+- **Job Management**: Create, edit, and delete job postings with detailed requirements
+- **Application Review**: Browse candidate profiles with CV access and application details
+- **Hiring Pipeline**: Update application status and manage the recruitment process
+- **Company Profile**: Maintain detailed company information and branding
+- **Analytics**: Track job performance and application metrics
 
-### 🔐 Security & Access
-- **JWT Authentication**: Secure token-based authentication system
-- **Role-Based Access**: Different interfaces for students vs. recruiters
+### 🔐 Security & Authentication
+- **JWT Authentication**: Secure token-based authentication with 7-day expiry
+- **Role-Based Access Control**: Separate interfaces and permissions for students vs. recruiters
 - **Protected Routes**: Secure access to user-specific features
-- **File Security**: Safe handling of uploaded documents
+- **CORS Configuration**: Production-ready cross-origin resource sharing
+- **File Security**: Safe handling and serving of uploaded documents
 
 ## 🛠️ Technology Stack
 
 ### Frontend
-- **React 18.3.1** - Modern UI library with hooks
+- **React 18.3.1** - Modern UI library with hooks and concurrent features
 - **TypeScript 5.5.3** - Type-safe JavaScript development
-- **Vite 5.4.2** - Fast build tool and development server
-- **Tailwind CSS 3.4.1** - Utility-first CSS framework
-- **React Router DOM 6.8.0** - Client-side routing
-- **Lucide React** - Beautiful icon library
+- **Vite 5.4.2** - Lightning-fast build tool and development server
+- **Tailwind CSS 3.4.1** - Utility-first CSS framework with custom gradients
+- **React Router DOM 6.8.0** - Client-side routing with protected routes
+- **Lucide React 0.344.0** - Beautiful, customizable icon library
 
 ### Backend
-- **Flask 2.3.3** - Python web framework
-- **Flask-CORS** - Cross-origin resource sharing
-- **PyJWT 2.8.0** - JSON Web Token authentication
-- **SQLite** - Lightweight database
-- **python-multipart** - File upload handling
+- **Flask 2.3.3** - Lightweight Python web framework
+- **Flask-CORS 4.0.0** - Cross-origin resource sharing with production configs
+- **PyJWT 2.8.0** - JSON Web Token authentication and authorization
+- **Werkzeug 2.3.7** - WSGI utility library for production deployment
+- **Gunicorn 21.2.0** - Production WSGI HTTP Server
+- **SQLite** - Lightweight database with schema migrations
 
-### Database
-- **SQLite** - Local database for development
-- **Supabase** - PostgreSQL-based backend service (migrations included)
+### Development & Deployment
+- **ESLint & TypeScript ESLint** - Code quality and type checking
+- **Autoprefixer & PostCSS** - CSS processing and optimization
+- **Vercel** - Frontend deployment platform
+- **Render/Railway** - Backend deployment platforms
 
 ## 📁 Project Structure
 
 ```
 job-portal-/
-├── frontend/                 # React frontend application
-├── backend/                  # Flask backend API
-│   ├── app.py               # Main Flask application
-│   ├── config.py            # Configuration settings
-│   ├── models/              # Data models
-│   ├── routes/              # API route handlers
-│   ├── utils/               # Utility functions
-│   └── database/            # Database configuration
-├── src/                     # Main source code
-│   ├── components/          # Reusable React components
-│   ├── pages/               # Page components
-│   │   ├── student/         # Student-specific pages
-│   │   └── recruiter/       # Recruiter-specific pages
-│   └── utils/               # Frontend utility functions
-├── supabase/                # Database migrations
-└── uploads/                 # File storage
+├── frontend/                    # React frontend application
+├── backend/                     # Flask backend API
+│   ├── app.py                  # Main Flask application with CORS config
+│   ├── wsgi.py                 # Production WSGI entry point
+│   ├── config.py               # Environment-based configuration
+│   ├── requirements.txt        # Python dependencies with Gunicorn
+│   ├── models/                 # Database models and business logic
+│   │   ├── user_model.py       # User authentication model
+│   │   ├── student_model.py    # Student profile management
+│   │   ├── recruiter_model.py  # Recruiter/company profiles
+│   │   ├── job_model.py        # Job posting and search
+│   │   └── application_model.py # Job application management
+│   ├── routes/                 # API route handlers
+│   │   ├── auth_routes.py      # Authentication endpoints
+│   │   ├── student_routes.py   # Student-specific API
+│   │   ├── recruiter_routes.py # Recruiter-specific API
+│   │   └── job_routes.py       # Job search and details API
+│   ├── utils/                  # Utility functions
+│   │   ├── auth.py             # JWT token management
+│   │   └── file_handler.py     # File upload and management
+│   └── database/               # Database configuration and schema
+│       ├── db.py               # Database connection and utilities
+│       └── schema.sql          # Database schema definitions
+├── src/                        # Frontend source code
+│   ├── components/             # Reusable React components
+│   │   ├── Layout.jsx          # App layout with navigation
+│   │   └── ProtectedRoute.jsx  # Route protection component
+│   ├── pages/                  # Page components
+│   │   ├── Home.jsx            # Landing page
+│   │   ├── Login.jsx           # Authentication page
+│   │   ├── Signup.jsx          # User registration
+│   │   ├── student/            # Student-specific pages
+│   │   │   ├── Dashboard.jsx   # Student dashboard with stats
+│   │   │   ├── Profile.jsx     # Profile management with CV upload
+│   │   │   ├── Jobs.jsx        # Job search and filtering
+│   │   │   ├── JobDetails.jsx  # Job details and application
+│   │   │   └── Applications.jsx # Application tracking
+│   │   └── recruiter/          # Recruiter-specific pages
+│   │       ├── Dashboard.jsx   # Recruiter dashboard with analytics
+│   │       ├── Profile.jsx     # Company profile management
+│   │       ├── Jobs.jsx        # Job management interface
+│   │       ├── PostJob.jsx     # Job creation form
+│   │       └── JobApplications.jsx # Application review system
+│   └── utils/                  # Frontend utilities
+│       ├── api.js              # API client with environment support
+│       └── auth.js             # Authentication state management
+├── supabase/                   # Database migrations (optional)
+├── uploads/                    # File storage directory
+├── render.yaml                 # Render deployment configuration
+├── Procfile                    # Heroku/Railway deployment
+└── package.json                # Project dependencies and scripts
 ```
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- **Node.js** (v16 or higher)
-- **Python** (v3.8 or higher)
+- **Node.js** (v18 or higher)
+- **Python** (v3.9 or higher)
 - **Git**
 
-### Frontend Setup
+### Quick Setup
 
-1. **Install dependencies**
+1. **Clone the repository**
    ```bash
-   npm install
+   git clone <repository-url>
+   cd job-portal-
    ```
 
-2. **Start development server**
+2. **Frontend Setup**
    ```bash
+   npm install
    npm run dev
    ```
 
-3. **Build for production**
-   ```bash
-   npm run build
-   ```
-
-### Backend Setup
-
-1. **Navigate to backend directory**
+3. **Backend Setup**
    ```bash
    cd backend
-   ```
-
-2. **Create virtual environment**
-   ```bash
-   python -m venv venv
-   ```
-
-3. **Activate virtual environment**
-   ```bash
-   # Windows
-   venv\Scripts\activate
-   
-   # macOS/Linux
-   source venv/bin/activate
-   ```
-
-4. **Install dependencies**
-   ```bash
    pip install -r requirements.txt
-   ```
-
-5. **Initialize database**
-   ```bash
-   python -c "from database.db import init_database; init_database()"
-   ```
-
-6. **Run Flask application**
-   ```bash
    python app.py
    ```
 
-### Environment Variables
+4. **Access the application**
+   - Frontend: http://localhost:5173
+   - Backend API: http://localhost:5000
 
-Create a `.env` file in the backend directory:
+### Environment Configuration
 
+#### Frontend (.env)
 ```env
-SECRET_KEY=your_secret_key_here
+VITE_API_URL=http://localhost:5000  # For development
+# VITE_API_URL=https://your-backend-url.onrender.com  # For production
+```
+
+#### Backend Environment Variables
+```env
+SECRET_KEY=your-secret-key-here
+FLASK_ENV=development  # or 'production'
+PORT=5000
 UPLOAD_FOLDER=uploads
-DATABASE_URL=sqlite:///database/portal.db
 ```
 
-## 📱 Usage
+## 📱 Application Workflow
 
-### Student Workflow
-1. **Sign up** with student role
-2. **Complete profile** with education, skills, and upload CV
-3. **Browse jobs** using search and filters
-4. **Apply to positions** with cover letter
-5. **Track applications** and status updates
+### Student Journey
+1. **Registration**: Sign up with student role and basic information
+2. **Profile Setup**: Complete profile with education, skills, location, and upload CV
+3. **Job Discovery**: Browse jobs with advanced search and filtering options
+4. **Application Process**: Apply to positions with personalized cover letters
+5. **Progress Tracking**: Monitor application status and receive updates
 
-### Recruiter Workflow
-1. **Sign up** with recruiter role
-2. **Complete company profile** with details
-3. **Post job openings** with requirements
-4. **Review applications** from candidates
-5. **Manage hiring process** and status updates
+### Recruiter Journey
+1. **Company Registration**: Sign up with recruiter role and company details
+2. **Profile Management**: Set up comprehensive company profile and branding
+3. **Job Posting**: Create detailed job listings with requirements and specifications
+4. **Candidate Review**: Browse applications, view CVs, and assess candidates
+5. **Hiring Management**: Update application status and manage recruitment pipeline
 
-## 🔧 API Endpoints
+## 🔧 API Documentation
 
-### Authentication
-- `POST /auth/signup` - User registration
-- `POST /auth/login` - User authentication
-- `POST /auth/logout` - User logout
+### Authentication Endpoints
+```
+POST /auth/signup     - User registration with role selection
+POST /auth/login      - User authentication with JWT token
+```
 
-### Student Routes
-- `GET /student/profile` - Get student profile
-- `PUT /student/profile` - Update student profile
-- `GET /student/jobs` - Browse available jobs
-- `POST /student/apply` - Apply to a job
+### Student Endpoints
+```
+GET    /student/profile              - Retrieve student profile
+PUT    /student/profile              - Update profile information
+POST   /student/upload-cv            - Upload CV file
+GET    /student/applications         - Get application history
+POST   /student/jobs/apply/{job_id}  - Apply to specific job
+```
 
-### Recruiter Routes
-- `GET /recruiter/profile` - Get company profile
-- `PUT /recruiter/profile` - Update company profile
-- `POST /recruiter/jobs` - Create new job posting
-- `GET /recruiter/applications` - Review applications
+### Recruiter Endpoints
+```
+GET    /recruiter/profile                    - Get company profile
+PUT    /recruiter/profile                    - Update company information
+POST   /recruiter/jobs                      - Create new job posting
+GET    /recruiter/jobs                      - Get recruiter's job listings
+PUT    /recruiter/jobs/{job_id}             - Update job posting
+DELETE /recruiter/jobs/{job_id}             - Delete job posting
+GET    /recruiter/jobs/{job_id}/applications - Get job applications
+PUT    /recruiter/applications/{app_id}/status - Update application status
+```
 
-### Job Routes
-- `GET /jobs` - List all jobs
-- `GET /jobs/<id>` - Get job details
-- `PUT /jobs/<id>` - Update job posting
+### Job Search Endpoints
+```
+GET /jobs/search  - Search jobs with filters (keyword, location, type, salary, etc.)
+GET /jobs/{id}    - Get detailed job information
+```
 
-## 🧪 Testing
+## 🚀 Production Deployment
 
+### Backend Deployment (Render - Recommended)
+
+1. **Push code to GitHub**
+2. **Connect to Render**: Visit [render.com](https://render.com)
+3. **Create Web Service** with these settings:
+   - **Build Command**: `cd backend && pip install -r requirements.txt`
+   - **Start Command**: `cd backend && gunicorn wsgi:app`
+   - **Environment Variables**:
+     ```
+     SECRET_KEY=your-production-secret-key
+     FLASK_ENV=production
+     PORT=10000
+     ```
+
+### Alternative Deployment Options
+
+#### Railway
 ```bash
-# Frontend linting
-npm run lint
+# Push to GitHub, connect Railway, auto-deploy from backend folder
+```
 
-# Backend testing (if tests are implemented)
+#### Heroku
+```bash
+git subtree push --prefix backend heroku main
+```
+
+### Frontend Deployment (Vercel)
+
+1. **Already deployed**: https://job-portal-blush-pi.vercel.app/
+2. **Add environment variable**:
+   - Go to Vercel project settings
+   - Add `VITE_API_URL` with your backend URL
+   - Redeploy
+
+## 🧪 Testing & Development
+
+### Development Scripts
+```bash
+npm run dev        # Start frontend development server
+npm run build      # Build for production
+npm run lint       # Run ESLint
+npm run preview    # Preview production build
+```
+
+### Backend Testing
+```bash
 cd backend
-python -m pytest
+python app.py      # Development server
+gunicorn wsgi:app  # Production server
 ```
 
-## 📦 Deployment
+## 🔒 Security Features
 
-### Frontend
-```bash
-npm run build
-# Deploy dist/ folder to your hosting service
-```
+- **JWT Token Authentication** with automatic expiry
+- **Role-based access control** with protected routes
+- **Input validation** and sanitization
+- **File upload restrictions** (PDF, DOC, DOCX only)
+- **CORS configuration** for production deployment
+- **Environment-based configuration** for sensitive data
 
-### Backend
-```bash
-# Set production environment variables
-export FLASK_ENV=production
-export SECRET_KEY=your_production_secret
+## 🎨 Design Features
 
-# Run with production server
-gunicorn -w 4 -b 0.0.0.0:5000 app:app
-```
+- **Modern gradient UI** with purple/blue theme
+- **Responsive design** for all device types
+- **Glassmorphism effects** with backdrop blur
+- **Smooth animations** and hover effects
+- **Professional typography** with proper spacing
+- **Accessible color contrast** and navigation
 
 ## 🤝 Contributing
 
@@ -214,28 +297,17 @@ gunicorn -w 4 -b 0.0.0.0:5000 app:app
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📝 License
+## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is created for educational purposes as part of a university assignment.
 
-## 🆘 Support
+## 🙏 Acknowledgments
 
-If you encounter any issues or have questions:
-
-1. Check the [Issues](https://github.com/yourusername/job-portal-/issues) page
-2. Create a new issue with detailed description
-3. Contact the development team
-
-## 🔮 Future Enhancements
-
-- [ ] Email notifications system
-- [ ] Advanced job matching algorithms
-- [ ] Video interview integration
-- [ ] Mobile application
-- [ ] Analytics dashboard
-- [ ] Multi-language support
-- [ ] Payment integration for premium features
+- **React Team** for the excellent frontend framework
+- **Flask Community** for the lightweight backend framework
+- **Tailwind CSS** for the utility-first styling approach
+- **Vercel & Render** for seamless deployment platforms
 
 ---
 
-**Built with ❤️ for connecting students with their dream careers**
+**Built with ❤️ by the Job Portal Team**
