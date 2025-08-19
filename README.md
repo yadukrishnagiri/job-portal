@@ -1,3 +1,10 @@
+# submited by : 
+- ## Prathmesh Pramod Goje - 52339100
+- ## Pratham Bhatnagar - 52337157
+- ## Yadukrishnagiri - 52339054
+- ## Krishna Chadha -52339050
+- ## Raj Aryan - 52336727
+
 # 🚀 Student Job Portal
 
 A comprehensive full-stack web application that connects students with recruiters and companies for job opportunities. Built with modern technologies to provide a seamless job search and recruitment experience.
@@ -214,34 +221,4 @@ gunicorn -w 4 -b 0.0.0.0:5000 app:app
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🆘 Support
-
-If you encounter any issues or have questions:
-
-1. Check the [Issues](https://github.com/yourusername/job-portal-/issues) page
-2. Create a new issue with detailed description
-3. Contact the development team
-
-## 🔮 Future Enhancements
-
-- [ ] Email notifications system
-- [ ] Advanced job matching algorithms
-- [ ] Video interview integration
-- [ ] Mobile application
-- [ ] Analytics dashboard
-- [ ] Multi-language support
-- [ ] Payment integration for premium features
-
----
-
-** submited by : 
-Prathmesh Pramod Goje
-Pratham Bhatnagar
-Yadukrishnagiri
-Krishna Chadha
-Raj Aarya**
 
